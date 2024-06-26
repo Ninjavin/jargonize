@@ -1,5 +1,6 @@
 "use client";
 
+import AnimatedGradientText from "@/components/magicui/animated-gradient-text";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -20,7 +21,8 @@ import {
 } from "@/components/ui/tooltip";
 // import { Select, SelectContent, SelectTrigger, SelectValue } from "@radix-ui/react-select";
 import axios from "axios";
-import { Info } from "lucide-react";
+import { ChevronRight, Info, Star } from "lucide-react";
+import Link from "next/link";
 import { FormEvent, useState } from "react";
 
 const models = [
@@ -51,7 +53,7 @@ export default function Home() {
             axios.post<{ result: string }>("/api/jargonize", {
               text: input,
               model,
-              temperature: creativity
+              temperature: creativity,
             })
           )
       );
@@ -195,6 +197,19 @@ export default function Home() {
             </CardContent>
           </Card>
         )}
+
+        <Link
+            href="https://github.com/Ninjavin/jargonize"
+            target="_blank"
+            className="mt-2"
+          >
+            <AnimatedGradientText className="px-6 py-2 rounded-full mt-8">
+              <Star className="w-6 h-6 fill-yellow-300 text-yellow-400" />
+              <hr className="mx-2 h-4 w-[1px] bg-gray-300" />
+              Star on Github
+              <ChevronRight className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+            </AnimatedGradientText>
+          </Link>
       </div>
     </main>
   );
