@@ -4,8 +4,6 @@ import { NextRequest, NextResponse } from "next/server";
 export async function POST(request: NextRequest) {
   const { text, model, temperature } = await request.json();
 
-  console.log(temperature);
-
   if (!text) {
     return NextResponse.json({ error: "Text is required!" }, { status: 400 });
   }
@@ -40,7 +38,6 @@ export async function POST(request: NextRequest) {
       }
     );
 
-    // console.log(response.data);
     return NextResponse.json({
       result: response.data.choices[0].message.content,
     });
