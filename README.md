@@ -1,3 +1,8 @@
+Project is deployed on https://jargonize.vercel.app/
+
+![image](https://github.com/Ninjavin/jargonize/assets/49443829/5eec7c51-74c8-499b-92eb-18f7bdf9e4a3)
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
